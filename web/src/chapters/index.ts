@@ -6,6 +6,7 @@ import { chapter4 } from "./ch4-formulation-patterns";
 import { chapter5 } from "./ch5-when-things-go-wrong";
 import { chapter6 } from "./ch6-integer-programming";
 import { chapter7 } from "./ch7-sensitivity";
+import { chapter8 } from "./ch8-production";
 
 export const CHAPTERS: Chapter[] = [
   chapter1,
@@ -15,8 +16,9 @@ export const CHAPTERS: Chapter[] = [
   chapter5,
   chapter6,
   chapter7,
+  chapter8,
   {
-    id: "ch8-sandbox",
+    id: "ch9-sandbox",
     title: "Sandbox",
     description: "Free-form LP editor — build and solve anything",
     lessons: [],
