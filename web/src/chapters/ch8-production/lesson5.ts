@@ -93,20 +93,24 @@ export const lesson5: Lesson = {
     {
       type: "prose",
       content: `
-        <h3>Modeling languages and APIs</h3>
-        <p>You rarely call a solver directly. Instead, you use a modeling layer:</p>
+        <h3>How you'll interact with a solver</h3>
+        <p>There are two approaches, and both are common:</p>
+        <p><strong>Direct solver APIs</strong>: you call the solver's C, C++, or Python API
+        to build the model programmatically — <code>addVariable()</code>, <code>addConstraint()</code>,
+        <code>optimize()</code>. This gives full control over model construction, solver parameters,
+        and solution extraction. Most production systems work this way.</p>
+        <p><strong>Modeling layers</strong>: higher-level libraries that let you write models
+        more concisely and swap solvers without rewriting code:</p>
         <ul>
           <li><strong>Python</strong>: PuLP (simple, wraps multiple solvers), Pyomo (powerful,
           academic-flavored), gurobipy (Gurobi-specific, excellent)</li>
           <li><strong>Julia</strong>: JuMP (best-in-class modeling language, wraps all major solvers)</li>
-          <li><strong>C/C++</strong>: direct solver APIs (Gurobi, CPLEX, HiGHS all have C APIs)</li>
           <li><strong>JavaScript</strong>: highs-js (HiGHS compiled to WebAssembly, as used in this tutorial)</li>
           <li><strong>AMPL / GAMS</strong>: dedicated algebraic modeling languages. Powerful for
           large models but add a language to your stack.</li>
         </ul>
-        <p>The modeling language is usually a bigger day-to-day decision than the solver.
-        Pick one that fits your team's stack. You can usually swap solvers later without
-        rewriting the model.</p>
+        <p>The choice depends on your priorities: direct APIs for maximum control and performance,
+        modeling layers for faster development and solver portability.</p>
       `,
     },
     {
