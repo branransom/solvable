@@ -1,13 +1,6 @@
-# Rust (kept locally for reference but not part of the build)
-target/
-Cargo.toml
-Cargo.lock
-crates/
-
 # Node
 web/node_modules/
 web/dist/
-web/wasm/
 
 # Spike
 spike/node_modules/
