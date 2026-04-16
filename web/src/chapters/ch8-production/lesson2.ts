@@ -20,7 +20,7 @@ export const lesson2: Lesson = {
         <h3>Warm starting</h3>
         <p>If you have a good feasible solution (e.g., the solution from 15 minutes ago),
         you can pass it to the solver as a <strong>warm start</strong>. For MIP, this gives
-        the solver an immediate incumbent — it doesn't have to discover a feasible solution
+        the solver an immediate incumbent - it doesn't have to discover a feasible solution
         from scratch. This can dramatically reduce solve time because:</p>
         <ul>
           <li>The solver can prune branches immediately (anything worse than the warm start is pruned)</li>
@@ -54,7 +54,7 @@ export const lesson2: Lesson = {
       question: "Your dispatch system solves a 10,000-variable MIP every 15 minutes. Each solve takes 45 seconds. New orders arrive between solves, changing ~5% of the data. What's the most effective speedup?",
       options: [
         "Buy a faster machine",
-        "Warm-start with the previous solution — the solver skips discovering a feasible solution and can prune more branches immediately",
+        "Warm-start with the previous solution - the solver skips discovering a feasible solution and can prune more branches immediately",
         "Reduce the model size by aggregating orders",
       ],
       correct_index: 1,
@@ -65,7 +65,7 @@ export const lesson2: Lesson = {
     },
     {
       type: "checkpoint",
-      message: "You understand warm starting and incremental re-solving — the key techniques for production optimization systems that solve repeatedly.",
+      message: "You understand warm starting and incremental re-solving - the key techniques for production optimization systems that solve repeatedly.",
     },
   ],
 };

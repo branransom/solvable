@@ -19,8 +19,8 @@ export const lesson4: Lesson = {
       type: "prose",
       content: `
         <h3>1. Coefficient scaling</h3>
-        <p>If your model mixes very large and very small numbers — a constraint with
-        coefficients of 0.001 and 1,000,000 — the solver may lose precision. The
+        <p>If your model mixes very large and very small numbers - a constraint with
+        coefficients of 0.001 and 1,000,000 - the solver may lose precision. The
         condition number of the basis matrix blows up, and simplex pivots accumulate
         rounding errors.</p>
         <p><strong>Fix</strong>: rescale your model so coefficients are within a few orders
@@ -52,7 +52,7 @@ export const lesson4: Lesson = {
       content: `
         <h3>3. The "zero but not zero" variable</h3>
         <p>You expect a variable to be exactly 0 in the optimal solution. The solver
-        returns 3.7e-11. Is that zero? Almost certainly yes — it's within the solver's
+        returns 3.7e-11. Is that zero? Almost certainly yes - it's within the solver's
         tolerance. But if your code checks <code>if (x > 0) { ship_order(); }</code>,
         you'll ship an order for 0.000000000037 units.</p>
         <p><strong>Fix</strong>: apply a rounding threshold before acting on solver output.
@@ -70,7 +70,7 @@ export const lesson4: Lesson = {
         a coefficient of 999999 in the constraint matrix. This worsens the condition number
         and can cause the solver to report infeasible solutions as optimal, or vice versa.</p>
         <p><strong>Fix</strong>: as before, make M as small as possible. But also watch for
-        solver warnings about numerical issues — most solvers log these if you enable
+        solver warnings about numerical issues - most solvers log these if you enable
         verbose output.</p>
       `,
     },
@@ -79,14 +79,14 @@ export const lesson4: Lesson = {
       question: "Your MIP solver returns a binary variable with value 0.9999999. What should you do?",
       options: [
         "Report a solver bug",
-        "Round to 1 — it's within floating-point tolerance of an integer",
+        "Round to 1 - it's within floating-point tolerance of an integer",
         "Tighten the solver's tolerance settings until it returns exactly 1",
       ],
       correct_index: 1,
       explanation: `This is normal floating-point behavior. The solver considers this "integer" because
         it's within its integrality tolerance (typically 10<sup>-5</sup>). Round binary/integer
         variables to the nearest integer before using them in your application logic. Tightening
-        tolerances can make the solver slower and may not help — floating-point arithmetic is
+        tolerances can make the solver slower and may not help - floating-point arithmetic is
         inherently approximate.`,
     },
     {
@@ -103,13 +103,13 @@ export const lesson4: Lesson = {
           <li>The solution has variables at unexpected values (e.g., a quantity of -1e-7)</li>
         </ul>
         <p>When you see these signs: check coefficient scaling, check for big-M constraints,
-        and try the barrier (interior point) method instead of simplex — it's often more
+        and try the barrier (interior point) method instead of simplex - it's often more
         numerically stable for poorly scaled problems.</p>
       `,
     },
     {
       type: "checkpoint",
-      message: "You know the common numerical pitfalls: scaling, tolerance, near-zero variables, and big-M instability — and how to defend against them.",
+      message: "You know the common numerical pitfalls: scaling, tolerance, near-zero variables, and big-M instability - and how to defend against them.",
     },
   ],
 };

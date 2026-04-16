@@ -9,7 +9,7 @@ export const lesson3: Lesson = {
       content: `
         <p>An optimization model that works perfectly today can silently degrade tomorrow.
         Input data drifts. Business rules change. The model that once produced excellent
-        plans starts producing plans that are feasible but bad — and nobody notices because
+        plans starts producing plans that are feasible but bad - and nobody notices because
         the solver still says "optimal."</p>
         <p>You need monitoring that catches this.</p>
       `,
@@ -59,7 +59,7 @@ export const lesson3: Lesson = {
       type: "prose",
       content: `
         <h3>The trust problem</h3>
-        <p>The hardest part of production optimization isn't the math — it's getting
+        <p>The hardest part of production optimization isn't the math - it's getting
         stakeholders to trust the output. A dispatcher who has been routing trucks for
         20 years will not blindly follow an algorithm's recommendation.</p>
         <p>Build trust incrementally:</p>
@@ -82,7 +82,7 @@ export const lesson3: Lesson = {
       question: "Your optimizer has been running in production for 6 months. Solve times have gradually increased from 3s to 12s. What's the most likely cause?",
       options: [
         "A bug in the solver library",
-        "The problem has grown — more variables/constraints as the business scaled — and the model hasn't been re-tuned",
+        "The problem has grown - more variables/constraints as the business scaled - and the model hasn't been re-tuned",
         "The server hardware is degrading",
       ],
       correct_index: 1,

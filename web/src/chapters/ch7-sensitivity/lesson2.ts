@@ -8,7 +8,7 @@ export const lesson2: Lesson = {
       type: "prose",
       content: `
         <p>Shadow prices and reduced costs don't last forever. They're valid within
-        a range. Beyond that range, the <strong>basis changes</strong> — a different set
+        a range. Beyond that range, the <strong>basis changes</strong> - a different set
         of constraints becomes binding, and the optimal vertex shifts.</p>
         <p>The <strong>allowable range</strong> tells you exactly how far you can push
         a parameter before the solution structure changes.</p>
@@ -57,7 +57,7 @@ export const lesson2: Lesson = {
     {
       type: "prose",
       content: `
-        <p>Drag the blue capacity constraint slowly. Watch the optimal point — at some
+        <p>Drag the blue capacity constraint slowly. Watch the optimal point - at some
         threshold, it "snaps" to a new vertex. That's the allowable range boundary.
         The shadow price was valid up to that point; beyond it, a different shadow price
         applies.</p>

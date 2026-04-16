@@ -20,7 +20,7 @@ export const CHAPTERS: Chapter[] = [
   {
     id: "ch9-sandbox",
     title: "Sandbox",
-    description: "Free-form LP editor — build and solve anything",
+    description: "Free-form LP editor - build and solve anything",
     lessons: [],
     is_sandbox: true,
   },

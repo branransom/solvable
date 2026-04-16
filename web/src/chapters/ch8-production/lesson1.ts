@@ -17,7 +17,7 @@ export const lesson1: Lesson = {
       content: `
         <h3>Time limits are not optional</h3>
         <p>Every production solver call needs a time limit. Solve times can be
-        unpredictable — especially for MIPs, where a problem that usually solves in
+        unpredictable - especially for MIPs, where a problem that usually solves in
         2 seconds might take 20 minutes on a slightly different input. Even pure LPs
         can occasionally stall on poorly conditioned instances. Without a time limit,
         one bad input can hang your system.</p>
@@ -40,11 +40,11 @@ export const lesson1: Lesson = {
         <ul>
           <li><strong>Optimal</strong>: the solver found and proved the best solution. Use it.</li>
           <li><strong>Time limit / Iteration limit</strong>: the solver ran out of time. For MIP,
-          check if there's an incumbent — if so, use it with the gap noted. For LP, this usually
+          check if there's an incumbent - if so, use it with the gap noted. For LP, this usually
           indicates a problem (poorly scaled model, numerical issues).</li>
           <li><strong>Infeasible</strong>: no solution satisfies all constraints. Don't retry with
           the same input. Log the infeasibility, alert if unexpected, and fall back.</li>
-          <li><strong>Unbounded</strong>: the objective can improve forever. This is a modeling bug —
+          <li><strong>Unbounded</strong>: the objective can improve forever. This is a modeling bug -
           a missing constraint. Log it, alert, and fall back.</li>
           <li><strong>Error / Numerical issues</strong>: the solver failed internally. Log the full
           error, fall back, and investigate the specific input that caused it.</li>
@@ -57,7 +57,7 @@ export const lesson1: Lesson = {
       question: "Your solver returns 'Time limit' with an incumbent solution and a 3% MIP gap. What do you do?",
       options: [
         "Discard the result and retry with a longer time limit",
-        "Use the incumbent — it's a feasible solution within 3% of optimal — and log the gap for monitoring",
+        "Use the incumbent - it's a feasible solution within 3% of optimal - and log the gap for monitoring",
         "Report an error to the caller",
       ],
       correct_index: 1,
@@ -70,7 +70,7 @@ export const lesson1: Lesson = {
       type: "prose",
       content: `
         <h3>Fallback strategies</h3>
-        <p>What happens when the solver fails entirely — infeasible on valid input,
+        <p>What happens when the solver fails entirely - infeasible on valid input,
         error, or time limit with no incumbent?</p>
         <ul>
           <li><strong>Cached solution</strong>: return the last known good solution for similar input.

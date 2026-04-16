@@ -7,7 +7,7 @@ export const lesson2: Lesson = {
     {
       type: "prose",
       content: `
-        <p>Every constraint has a <strong>right-hand side (RHS)</strong> value — the number
+        <p>Every constraint has a <strong>right-hand side (RHS)</strong> value - the number
         after the ≤ or ≥ sign. It represents a resource limit, a demand requirement, or
         a physical capacity.</p>
         <p>When you drag a constraint, you're changing this RHS value. In the real world,
@@ -53,7 +53,7 @@ export const lesson2: Lesson = {
         It answers: "What would I pay for one more unit of this resource?"</p>
         <p>If the capacity constraint has a shadow price of $3, it means each additional
         unit of capacity is worth $3 of profit. You'd pay up to $3 to get one more unit.</p>
-        <p>Non-binding constraints have a shadow price of zero — they're not limiting you,
+        <p>Non-binding constraints have a shadow price of zero - they're not limiting you,
         so more of that resource is worthless (for now).</p>
         <p>We'll explore this deeply in Chapter 7.</p>
       `,

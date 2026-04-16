@@ -43,7 +43,7 @@ export const lesson3: Lesson = {
     {
       type: "prose",
       content: `
-        <p>Try enabling the purple "min_tables" constraint — it requires at least 2 tables.
+        <p>Try enabling the purple "min_tables" constraint - it requires at least 2 tables.
         This is a <strong>≥ constraint</strong> (greater-than-or-equal). Instead of limiting
         from above, it limits from below.</p>
         <p>You can also combine dragging and toggling: drag the min_tables constraint

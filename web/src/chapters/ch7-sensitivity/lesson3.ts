@@ -33,8 +33,8 @@ export const lesson3: Lesson = {
       type: "prediction",
       question: "Your LP solution has an allowable range of ±2 on the demand constraint, but demand uncertainty is ±5. What should you do?",
       options: [
-        "Trust the solution — the solver found the optimum",
-        "Worry — your data uncertainty exceeds the allowable range, meaning the optimal solution might be completely different under realistic demand scenarios",
+        "Trust the solution - the solver found the optimum",
+        "Worry - your data uncertainty exceeds the allowable range, meaning the optimal solution might be completely different under realistic demand scenarios",
         "Add more constraints to make the model more stable",
       ],
       correct_index: 1,

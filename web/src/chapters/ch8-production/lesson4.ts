@@ -58,7 +58,7 @@ Nodes explored: 312`,
           <li>If presolve removes a large fraction of the model (>50% of rows/cols), your
           formulation has a lot of redundancy. This isn't a problem, but it means you might
           be able to simplify the model yourself for clarity.</li>
-          <li>If presolve detects infeasibility, the log will say so immediately — you
+          <li>If presolve detects infeasibility, the log will say so immediately - you
           don't need to wait for the solve.</li>
           <li>If presolve removes very little, the model is tight. Good for solve time.</li>
         </ul>
@@ -70,7 +70,7 @@ Nodes explored: 312`,
         <h3>Section 2: LP relaxation</h3>
         <pre><code>Optimal LP relaxation: 34521.7 (0.8s)</code></pre>
         <p>The solver first solves the LP relaxation (ignoring integer requirements).
-        This gives the <strong>dual bound</strong> — the best possible value for the
+        This gives the <strong>dual bound</strong> - the best possible value for the
         integer problem.</p>
         <p><strong>What to look for</strong>:</p>
         <ul>
@@ -107,7 +107,7 @@ Nodes explored: 312`,
       question: "After 12 nodes, the primal is 33850 and the dual is 34480. The gap is 1.83%. What does this tell you?",
       options: [
         "The solver is stuck and making no progress",
-        "The solver found a feasible solution worth 33850 and has proven that no solution can exceed 34480 — the true optimum is somewhere in between",
+        "The solver found a feasible solution worth 33850 and has proven that no solution can exceed 34480 - the true optimum is somewhere in between",
         "The solver needs 1.83% more time to finish",
       ],
       correct_index: 1,

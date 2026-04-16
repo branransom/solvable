@@ -23,7 +23,7 @@ export const lesson2: Lesson = {
           <li><strong>Branch</strong>: pick a variable that's fractional (e.g., x = 2.7). Create two subproblems:
           one with x ≤ 2, one with x ≥ 3.</li>
           <li><strong>Bound</strong>: solve the LP relaxation of each subproblem. If a subproblem's bound
-          is worse than the best integer solution found so far, <strong>prune it</strong> — no point exploring further.</li>
+          is worse than the best integer solution found so far, <strong>prune it</strong> - no point exploring further.</li>
           <li><strong>Repeat</strong>: keep branching and bounding until all subproblems are pruned or solved.</li>
         </ol>
       `,
@@ -42,14 +42,14 @@ export const lesson2: Lesson = {
       type: "prediction",
       question: "A MIP solver has been running for 30 seconds. It found a solution with value 100, and the best remaining LP bound is 102. The MIP gap is 2%. Should you stop?",
       options: [
-        "No — always keep running until you find the proven optimal solution",
-        "It depends — 2% might be excellent or unacceptable depending on your application",
-        "Yes — 2% is always good enough",
+        "No - always keep running until you find the proven optimal solution",
+        "It depends - 2% might be excellent or unacceptable depending on your application",
+        "Yes - 2% is always good enough",
       ],
       correct_index: 1,
       explanation: `The right answer depends on context. A 2% gap means the solver has proven no solution
         can be more than 2% better than what you have. For a warehouse routing problem, that's
-        excellent — the data uncertainty alone is larger than 2%. But for a large-scale supply chain
+        excellent - the data uncertainty alone is larger than 2%. But for a large-scale supply chain
         network or capital allocation where the objective is measured in billions of dollars, 2%
         could mean tens of millions left on the table.
         <br><br>
@@ -63,7 +63,7 @@ export const lesson2: Lesson = {
       title: "The exponential wall",
       content: `
         <p>In the worst case, branch and bound explores 2<sup>N</sup> nodes for N binary
-        variables. This is exponential, and it's not a limitation of the algorithm — the
+        variables. This is exponential, and it's not a limitation of the algorithm - the
         problem itself (integer programming) is NP-hard. No algorithm can solve all instances
         in polynomial time (unless P = NP).</p>
         <p>In practice, good formulations and modern heuristics make most problems tractable.
@@ -71,7 +71,7 @@ export const lesson2: Lesson = {
         <ul>
           <li>Set a time limit</li>
           <li>Set a MIP gap tolerance</li>
-          <li>Monitor the incumbent (best solution found so far) — it's often very good long before the solver proves optimality</li>
+          <li>Monitor the incumbent (best solution found so far) - it's often very good long before the solver proves optimality</li>
           <li>Invest in formulation tightness before investing in solver time</li>
         </ul>
       `,

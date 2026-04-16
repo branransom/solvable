@@ -41,7 +41,7 @@ export const lesson3: Lesson = {
         <p>If <code>is_warehouse1_open = 0</code>, then <code>ship ≤ 0</code> (can't ship).
         If <code>is_warehouse1_open = 1</code>, then <code>ship ≤ M</code> (effectively unconstrained).</p>
         <p>The danger: if M is too large (e.g., 999999), the LP relaxation becomes very weak
-        and the solver takes much longer. <strong>Always make M as small as possible</strong> —
+        and the solver takes much longer. <strong>Always make M as small as possible</strong> -
         use the tightest valid upper bound.</p>
       `,
     },
@@ -54,7 +54,7 @@ export const lesson3: Lesson = {
         "10000 (10x the capacity for safety margin)",
       ],
       correct_index: 1,
-      explanation: `M should be exactly 1000 — the tightest valid bound. Using 999999 is technically correct
+      explanation: `M should be exactly 1000 - the tightest valid bound. Using 999999 is technically correct
         but makes the LP relaxation almost useless, causing the solver to explore far more branches.
         A tight M = 1000 means the LP relaxation closely approximates the integer problem, giving
         the solver much better bounds and faster convergence.`,
