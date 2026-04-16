@@ -43,8 +43,19 @@
   let model: PlotModel = $state(JSON.parse(JSON.stringify(initial_model)));
   let geometry: PlotGeometry = $state(compute_geometry(model, null));
 
-  // Explorer point state
-  let explorer_point: Point | null = $state(null);
+  // Explorer point state - initialize to centroid of feasible region if dragging is enabled
+  function compute_initial_explorer(): Point | null {
+    if (!allow_drag_point) return null;
+    const geo = compute_geometry(model, null);
+    if (geo.feasible_polygon.length === 0) return null;
+    const centroid = {
+      x: geo.feasible_polygon.reduce((sum, p) => sum + p.x, 0) / geo.feasible_polygon.length,
+      y: geo.feasible_polygon.reduce((sum, p) => sum + p.y, 0) / geo.feasible_polygon.length,
+    };
+    return centroid;
+  }
+
+  let explorer_point: Point | null = $state(compute_initial_explorer());
   let is_dragging_explorer = $state(false);
 
   // Constraint dragging state
