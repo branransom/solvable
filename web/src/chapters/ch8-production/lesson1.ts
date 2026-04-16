@@ -17,18 +17,27 @@ export const lesson1: Lesson = {
       content: `
         <h3>Time limits are not optional</h3>
         <p>Every production solver call needs a time limit. Solve times can be
-        unpredictable - especially for MIPs, where a problem that usually solves in
-        2 seconds might take 20 minutes on a slightly different input. Even pure LPs
-        can occasionally stall on poorly conditioned instances. Without a time limit,
-        one bad input can hang your system.</p>
+        unpredictable for both LP and MIP:</p>
+        <ul>
+          <li><strong>MIP</strong>: a problem that usually solves in 2 seconds might take
+          20 minutes on slightly different input. The combinatorial search is inherently
+          variable.</li>
+          <li><strong>Large-scale LP</strong>: models with millions of variables and complex
+          structure (time-linking constraints, network coupling) can take significant time.
+          These are often LP approximations of MIPs that would be intractable as integer
+          programs, and they carry their own challenges: memory pressure, numerical
+          conditioning, and sensitivity to presolve and algorithm choice (simplex vs.
+          barrier).</li>
+        </ul>
+        <p>Without a time limit, one bad input can hang your system.</p>
         <p>When the time limit hits:</p>
         <ul>
           <li><strong>For MIP</strong>: the solver returns the <strong>incumbent</strong>
           (best integer solution found so far) along with the MIP gap. A 2% suboptimal
           solution delivered on time is better than the optimal solution delivered never.</li>
-          <li><strong>For LP</strong>: hitting a time limit is rarer, but it happens with
-          very large or numerically difficult models. The solver may return the last feasible
-          basis found, or report no solution.</li>
+          <li><strong>For LP</strong>: the solver may return the last feasible basis
+          found, or report no solution. Unlike MIP, there's no "incumbent" concept for LP -
+          a partial LP solve doesn't give you a feasible solution to use.</li>
         </ul>
       `,
     },

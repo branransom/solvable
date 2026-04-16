@@ -21,12 +21,19 @@ export const lesson3: Lesson = {
         <p><strong>Solve time</strong>: Track p50, p95, and p99 solve times. A gradual
         increase means the problem is getting harder (more variables, tighter constraints).
         A sudden spike means something changed in the input data that makes the model
-        harder to solve.</p>
+        harder to solve. This matters for both LP and MIP. Large-scale LPs with complex
+        structure can be just as sensitive to input changes as MIPs.</p>
 
-        <p><strong>MIP gap at termination</strong>: If you're solving to a gap tolerance
-        (e.g., 1%), track how often the solver hits the time limit before reaching the
-        gap target. If this starts happening frequently, the problems are getting harder
+        <p><strong>MIP gap at termination</strong> (MIP only): If you're solving to a gap
+        tolerance (e.g., 1%), track how often the solver hits the time limit before reaching
+        the gap target. If this starts happening frequently, the problems are getting harder
         faster than you expected.</p>
+
+        <p><strong>Numerical health</strong> (especially large LP): Track solver warnings
+        about conditioning, large coefficients, or basis singularity. For large-scale LPs
+        with millions of variables, numerical stability is a primary concern. Monitor whether
+        the solver switches algorithms (simplex to barrier or vice versa) and whether
+        presolve effectiveness changes as the problem structure evolves.</p>
 
         <p><strong>Objective value trend</strong>: Plot the optimal objective over time.
         If cost is increasing week over week, is it because input prices rose, or because

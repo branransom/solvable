@@ -18,19 +18,23 @@ export const lesson2: Lesson = {
       type: "prose",
       content: `
         <h3>Warm starting</h3>
-        <p>If you have a good feasible solution (e.g., the solution from 15 minutes ago),
-        you can pass it to the solver as a <strong>warm start</strong>. For MIP, this gives
-        the solver an immediate incumbent - it doesn't have to discover a feasible solution
-        from scratch. This can dramatically reduce solve time because:</p>
+        <p>Warm starting means giving the solver a head start using information from a
+        previous solve. How this works depends on the problem type:</p>
+        <p><strong>For LP</strong>: the solver can warm-start with the previous
+        <strong>basis</strong>. If only a few coefficients changed, the previous basis is
+        still feasible (or close to it), and simplex only needs a few pivots to re-optimize
+        instead of starting from scratch. For large-scale LPs with millions of variables,
+        this can reduce solve time from minutes to seconds. Basis warm-starting is one of
+        the main reasons simplex remains competitive with interior point methods for
+        re-solving workflows, even though barrier may be faster on a cold start.</p>
+        <p><strong>For MIP</strong>: you can pass a feasible solution as a warm start,
+        giving the solver an immediate incumbent. This can dramatically reduce solve time
+        because:</p>
         <ul>
           <li>The solver can prune branches immediately (anything worse than the warm start is pruned)</li>
           <li>The gap starts small instead of at infinity</li>
           <li>If the data didn't change much, the warm start might already be optimal or near-optimal</li>
         </ul>
-        <p>For LP (continuous problems), the solver can warm-start with the previous
-        <strong>basis</strong>. If only a few coefficients changed, the previous basis is
-        still feasible (or close to it), and simplex only needs a few pivots to re-optimize
-        instead of starting from scratch.</p>
       `,
     },
     {

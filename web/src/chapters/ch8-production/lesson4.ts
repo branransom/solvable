@@ -134,8 +134,31 @@ Nodes explored: 312`,
       `,
     },
     {
+      type: "go_deeper",
+      title: "LP-only logs look different",
+      content: `
+        <p>The log above is from a MIP solve. A pure LP log is simpler - there's no
+        branch and bound section. Instead you'll see:</p>
+        <ul>
+          <li><strong>Presolve</strong>: same as MIP</li>
+          <li><strong>Algorithm choice</strong>: "Using simplex" or "Using barrier (interior point)."
+          For large-scale LPs, barrier is often faster on a cold start but doesn't produce a basis.
+          Simplex is better for warm starting.</li>
+          <li><strong>Iteration count</strong>: simplex reports iteration count (number of pivots).
+          A very high iteration count relative to the number of constraints suggests numerical
+          difficulties or poor scaling.</li>
+          <li><strong>Crossover</strong>: if barrier is used, a "crossover" phase converts the
+          interior point solution to a basic feasible solution. This can sometimes take longer
+          than the barrier solve itself.</li>
+        </ul>
+        <p>For large-scale LPs with millions of variables, the key diagnostic is whether
+        simplex or barrier is the right choice for your problem structure, and whether
+        presolve is reducing the problem effectively.</p>
+      `,
+    },
+    {
       type: "checkpoint",
-      message: "You can read a solver log and diagnose performance issues: presolve behavior, LP relaxation quality, B&B convergence, and gap stalls.",
+      message: "You can read a solver log and diagnose performance issues: presolve behavior, algorithm choice, B&B convergence, and gap stalls.",
     },
   ],
 };
