@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import ChapterSidebar from "./ChapterSidebar.svelte";
+  import LandingPage from "./LandingPage.svelte";
   import LessonView from "./LessonView.svelte";
   import SandboxView from "./SandboxView.svelte";
   import { CHAPTERS, findChapter, findLesson } from "./chapters/index";
@@ -16,9 +17,13 @@
 
   let current_chapter: Chapter | undefined = $state(undefined);
   let current_lesson: Lesson | undefined = $state(undefined);
+  let show_landing = $state(true);
 
   progress.subscribe((value) => {
     progress_state = value;
+    if (value.completed_lessons.length > 0) {
+      show_landing = false;
+    }
     const chapter = findChapter(value.current_chapter);
 
     if (chapter?.is_sandbox) {
@@ -107,6 +112,11 @@
     return false;
   });
 
+  function handle_start_tutorial() {
+    show_landing = false;
+    navigate_to("ch1-what-is-optimization", "your-first-optimization");
+  }
+
   const is_last_lesson_in_chapter = $derived.by(() => {
     if (!current_chapter || !current_lesson) return false;
     const current_index = current_chapter.lessons.findIndex(
@@ -116,6 +126,9 @@
   });
 </script>
 
+{#if show_landing}
+  <LandingPage on_start={handle_start_tutorial} />
+{:else}
 <div class="app">
   <ChapterSidebar
     chapters={CHAPTERS}
@@ -152,6 +165,7 @@
     {/if}
   </main>
 </div>
+{/if}
 
 <style>
   :global(*) {
