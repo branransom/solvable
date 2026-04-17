@@ -60,7 +60,7 @@ export const lesson1: Lesson = {
         },
         allow_drag_constraints: true,
         allow_drag_objective: false,
-        allow_drag_point: true,
+        allow_drag_point: false,
         allow_toggle_constraints: false,
         show_objective_contour: true,
         show_gradient_arrow: true,
