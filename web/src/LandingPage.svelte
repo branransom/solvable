@@ -24,8 +24,9 @@
       <h1 class="title">solvable</h1>
       <p class="subtitle">An interactive tutorial on mathematical optimization for software engineers.</p>
       <p class="description">
-        Learn to formulate and solve linear programs, integer programs, and real-world
-        optimization problems. Everything runs in your browser, powered by the
+        Understand how linear programs and integer programs work, what solvers
+        do with them, and how to operate optimization systems in production.
+        Everything runs in your browser, powered by the
         <a href="https://highs.dev" target="_blank" rel="noopener">HiGHS</a> solver
         compiled to WebAssembly.
       </p>
