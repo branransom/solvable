@@ -10,8 +10,7 @@ export const lesson1: Lesson = {
         <p>You now know how to read and solve an LP. But the hardest part of optimization
         isn't solving; it's <strong>modeling</strong>. Translating a messy real-world problem
         into decision variables, constraints, and an objective.</p>
-        <p>The good news: most real problems follow a small number of recurring patterns.
-        Learn these patterns and you can model almost anything.</p>
+        <p>Most real problems follow a small number of recurring patterns.</p>
       `,
     },
     {
@@ -24,7 +23,6 @@ export const lesson1: Lesson = {
           <li><strong>What limits my choices?</strong> → These are your <em>constraints</em></li>
           <li><strong>What am I optimizing?</strong> → This is your <em>objective</em></li>
         </ol>
-        <p>Let's see how these questions apply to common patterns.</p>
       `,
     },
     {

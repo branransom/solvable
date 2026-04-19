@@ -8,7 +8,7 @@ export const lesson1: Lesson = {
       type: "prose",
       content: `
         <p>In the last chapter you saw that constraints create the feasible region.
-        Now let's see what happens when constraints <strong>move</strong>.</p>
+        What happens when constraints <strong>move</strong>?</p>
         <p>Imagine your factory gets more machine capacity. Or less labor is available.
         Each change shifts a constraint boundary, and the optimal solution shifts with it.</p>
         <p><strong>Drag the constraint lines</strong> in the plot below. Watch how the

@@ -78,8 +78,8 @@ export const lesson1: Lesson = {
     {
       type: "prose",
       content: `
-        <p>Now let's reveal the answer. The plot below shows the <strong>optimal point</strong>
-        marked in green. This is the corner that gives the highest profit.</p>
+        <p>The plot below shows the <strong>optimal point</strong> marked in green.
+        This is the corner that gives the highest profit.</p>
       `,
     },
     {

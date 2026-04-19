@@ -11,9 +11,9 @@ export const lesson1: Lesson = {
         the solver find it?</p>
         <p>One approach: check every vertex. But a problem with 100 variables could have
         billions of vertices, and checking them all is impossible.</p>
-        <p>The solver uses a smarter strategy: <strong>start at any vertex, look at
-        neighboring vertices, and walk to whichever one improves the objective.</strong>
-        Repeat until no neighbor is better. That's the simplex method in one sentence.</p>
+        <p>The solver uses a smarter strategy: <strong>start at a vertex, walk to
+        the best neighbor, repeat until no neighbor improves the objective.</strong>
+        That's the simplex method.</p>
       `,
     },
     {

@@ -54,8 +54,8 @@ export const lesson2: Lesson = {
     {
       type: "prose",
       content: `
-        <p>This is an important principle: <strong>every constraint you add can only hurt
-        (or not change) the objective.</strong> Constraints are the price you pay for reality.</p>
+        <p><strong>Every constraint you add can only hurt (or not change) the objective.</strong>
+        Constraints are the price you pay for reality.</p>
         <p>When you're building a model, ask yourself: "Is this constraint real, or am I
         over-constraining the problem?" Unnecessary constraints leave money on the table.</p>
       `,
