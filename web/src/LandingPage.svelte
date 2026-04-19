@@ -30,8 +30,7 @@
         compiled to WebAssembly.
       </p>
       <p class="description">
-        Drag constraints. Watch the feasible region change. Build intuition that
-        textbooks can't give you.
+        Drag constraints. Watch the feasible region change. See what the solver sees.
       </p>
       <button class="start-button" onclick={on_start}>
         Start learning
@@ -51,21 +50,6 @@
         show_vertex_labels={false}
         highlight_optimal={true}
       />
-    </div>
-  </div>
-
-  <div class="features">
-    <div class="feature">
-      <h3>No installation</h3>
-      <p>The solver runs entirely in your browser via WebAssembly. No server, no signup, no dependencies.</p>
-    </div>
-    <div class="feature">
-      <h3>Learn by doing</h3>
-      <p>Drag constraints, explore feasible regions, and see how the solver responds in real time.</p>
-    </div>
-    <div class="feature">
-      <h3>Built for engineers</h3>
-      <p>Skip the theory-first approach. Start with working models and build intuition from there.</p>
     </div>
   </div>
 
@@ -159,34 +143,6 @@
     max-height: 500px;
   }
 
-  .features {
-    max-width: 1100px;
-    margin: 4rem auto 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-
-  .feature {
-    padding: 1.25rem;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid #2a2d3a;
-    border-radius: 8px;
-  }
-
-  .feature h3 {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #e1e4eb;
-    margin-bottom: 0.5rem;
-  }
-
-  .feature p {
-    font-size: 0.85rem;
-    color: #6b7084;
-    line-height: 1.5;
-  }
-
   @media (max-width: 768px) {
     .landing {
       padding: 1.5rem 1rem;
@@ -207,10 +163,5 @@
       max-height: 400px;
     }
 
-    .features {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
   }
 </style>
